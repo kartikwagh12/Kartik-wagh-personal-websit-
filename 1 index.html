@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kartik Wagh — Computer Engineering Student, Web Developer and Creator.">
+<meta name="theme-color" content="#07090f">
+<title>Kartik Wagh | Computer Engineering Portfolio</title>
+<style>
+:root{
+  --bg:#07090f; --bg2:#0b0f18; --card:rgba(255,255,255,.055);
+  --line:rgba(255,255,255,.12); --text:#f5f7fb; --muted:#aab2c0;
+  --accent:#7c8cff; --accent2:#54d7ff; --shadow:0 25px 80px rgba(0,0,0,.38);
+}
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 85% 12%,rgba(84,215,255,.12),transparent 28%),
+    radial-gradient(circle at 10% 35%,rgba(124,140,255,.11),transparent 30%),var(--bg);
+  color:var(--text);line-height:1.6;overflow-x:hidden;
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,#000,transparent 75%);z-index:-1}
+a{color:inherit;text-decoration:none}
+.nav{
+  position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:50;
+  width:min(1160px,calc(100% - 28px));padding:10px 14px;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  background:rgba(9,12,20,.72);backdrop-filter:blur(18px);border:1px solid var(--line);
+  border-radius:18px;box-shadow:0 12px 45px rgba(0,0,0,.25)
+}
+.logo{font-weight:800;letter-spacing:.04em;white-space:nowrap}
+.logo span{color:var(--accent2)}
+.links{display:flex;align-items:center;gap:4px}
+.links a{font-size:.86rem;color:#cbd2df;padding:9px 10px;border-radius:10px;transition:.25s}
+.links a:hover{background:rgba(255,255,255,.08);color:white}
+.menu{display:none;border:1px solid var(--line);background:transparent;color:white;border-radius:10px;padding:8px 11px;font-size:18px}
+.hero{min-height:100vh;display:grid;place-items:center;padding:130px 20px 80px;position:relative}
+.hero-inner{width:min(1120px,100%);display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
+.eyebrow{display:inline-flex;gap:9px;align-items:center;color:#cbd3e2;border:1px solid var(--line);background:rgba(255,255,255,.04);padding:8px 13px;border-radius:999px;font-size:.84rem}
+.dot{width:7px;height:7px;background:#58e6a8;border-radius:50%;box-shadow:0 0 16px #58e6a8}
+h1{font-size:clamp(3.2rem,8vw,7rem);line-height:.92;letter-spacing:-.065em;margin:22px 0}
+.gradient{background:linear-gradient(100deg,#fff 10%,#aeb8ff 52%,#62dcff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:1.08rem;color:var(--muted);max-width:650px}
+.actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.06);transition:.25s;font-weight:650}
+.btn.primary{background:linear-gradient(110deg,var(--accent),#55c9ff);color:#07101b;border:none}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(70,150,255,.2)}
+.hero-card{min-height:420px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025));box-shadow:var(--shadow);padding:28px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.hero-card:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#6575ff,transparent 65%);top:-90px;right:-80px;filter:blur(5px);opacity:.65}
+.hero-card:after{content:"";position:absolute;width:180px;height:180px;border:1px solid rgba(255,255,255,.12);border-radius:50%;top:40px;left:35px}
+.card-content{position:relative;z-index:1}
+.card-tag{color:#8edfff;font-size:.78rem;text-transform:uppercase;letter-spacing:.16em}
+.card-title{font-size:2rem;font-weight:800;margin:8px 0}
+.card-small{color:var(--muted)}
+section{width:min(1120px,calc(100% - 40px));margin:auto;padding:110px 0}
+.section-head{
+  margin-bottom:44px;
+  position:relative;
+  padding:26px 24px;
+  border-radius:24px;
+  border:1px solid rgba(84,215,255,.14);
+  background:
+    radial-gradient(circle at 8% 50%,rgba(84,215,255,.10),transparent 30%),
+    linear-gradient(110deg,rgba(255,255,255,.045),rgba(84,215,255,.025));
+  box-shadow:0 0 35px rgba(84,215,255,.07),inset 0 0 35px rgba(124,140,255,.035);
+  overflow:hidden;
+}
+.section-head:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,#62dcff,transparent);
+  box-shadow:0 0 14px #62dcff;
+}
+.kicker{
+  display:inline-block;
+  font-size:1.15rem;
+  font-weight:800;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#8feaff;
+  text-shadow:0 0 8px rgba(84,215,255,.8),0 0 22px rgba(84,215,255,.45);
+  padding:8px 14px;
+  border:1px solid rgba(84,215,255,.28);
+  border-radius:12px;
+  background:rgba(84,215,255,.055);
+  box-shadow:0 0 18px rgba(84,215,255,.12), inset 0 0 18px rgba(84,215,255,.035);
+}
+h2{font-size:clamp(2.1rem,5vw,4rem);letter-spacing:-.04em;line-height:1.05;margin-top:8px}
+.sub{color:var(--muted);max-width:680px;margin-top:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 15px 45px rgba(0,0,0,.16);transition:.3s}
+.panel:hover{transform:translateY(-6px);border-color:rgba(130,160,255,.4)}
+.panel h3{font-size:1.25rem;margin:10px 0 7px}
+.panel p{color:var(--muted);font-size:.95rem}
+.icon{font-size:1.6rem}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.skill{padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);color:#dce3ee}
+.skill.learning{border-color:rgba(84,215,255,.3);color:#9fe9ff}
+.timeline{border-left:1px solid var(--line);padding-left:25px;display:grid;gap:20px}
+.timeline .panel{position:relative}
+.timeline .panel:before{content:"";position:absolute;left:-31px;top:28px;width:11px;height:11px;border-radius:50%;background:#74ddff;box-shadow:0 0 18px #74ddff}
+.project-top{display:flex;justify-content:space-between;gap:10px}
+.badge{font-size:.72rem;color:#a8eaff;border:1px solid rgba(84,215,255,.25);padding:5px 8px;border-radius:999px;white-space:nowrap}
+.location{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.mapbox{min-height:280px;border-radius:24px;border:1px solid var(--line);background:radial-gradient(circle at 50% 45%,rgba(84,215,255,.15),transparent 30%),linear-gradient(145deg,#101724,#080b12);display:grid;place-items:center;text-align:center;padding:25px}
+.map-pin{font-size:3rem}
+.pdfbox{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+footer{border-top:1px solid var(--line);padding:30px 20px;text-align:center;color:#7f8998;font-size:.9rem}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.show{opacity:1;transform:none}
+#about{scroll-margin-top:100px}
+@media(max-width:850px){
+ .links{display:none;position:absolute;top:65px;left:0;right:0;flex-direction:column;align-items:stretch;padding:10px;background:rgba(9,12,20,.95);border:1px solid var(--line);border-radius:16px}
+ .links.open{display:flex}.links a{padding:13px}
+ .menu{display:block}.hero-inner{grid-template-columns:1fr;gap:35px}.hero-card{min-height:300px}
+ .grid{grid-template-columns:1fr 1fr}.location,.contact{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+ section{width:min(100% - 28px,1120px);padding:80px 0}
+ .kicker{font-size:1rem;padding:7px 11px}
+ .hero{padding:115px 14px 60px}.hero-inner{width:100%}
+ h1{font-size:3.45rem}.grid{grid-template-columns:1fr}.nav{top:9px;width:calc(100% - 18px)}
+ .hero-card{min-height:260px}.panel{padding:21px}
+}
+
+/* Premium motion layer */
+html{scroll-behavior:smooth}
+body{background-attachment:fixed}
+body:after{
+  content:"";position:fixed;inset:-20%;pointer-events:none;z-index:-2;
+  background:radial-gradient(circle at 50% 50%,rgba(84,215,255,.035),transparent 32%);
+  animation:ambient 12s ease-in-out infinite alternate;
+}
+.nav{animation:navIn .8s cubic-bezier(.2,.8,.2,1) both}
+.logo{transition:transform .35s ease,text-shadow .35s ease}
+.logo:hover{transform:translateY(-1px);text-shadow:0 0 18px rgba(84,215,255,.55)}
+.hero-card{animation:cardFloat 6s ease-in-out infinite}
+.hero-card:before{animation:orb 9s ease-in-out infinite alternate}
+.hero-card:after{animation:ring 7s linear infinite}
+.btn.primary{box-shadow:0 0 0 rgba(84,215,255,0);animation:buttonGlow 3s ease-in-out infinite}
+.panel{will-change:transform}
+.panel:hover{box-shadow:0 18px 55px rgba(0,0,0,.24),0 0 28px rgba(84,215,255,.08)}
+.skill{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.skill:hover{transform:translateY(-3px);box-shadow:0 0 20px rgba(84,215,255,.1);border-color:rgba(84,215,255,.35)}
+.kicker{animation:kickerGlow 3.5s ease-in-out infinite alternate}
+.section-head:after{animation:linePulse 3s ease-in-out infinite}
+@keyframes ambient{from{transform:translate3d(-2%, -1%,0) scale(1)}to{transform:translate3d(2%,1%,0) scale(1.06)}}
+@keyframes navIn{from{opacity:0;transform:translate(-50%,-18px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes cardFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-9px) rotate(.35deg)}}
+@keyframes orb{from{transform:translate(0,0) scale(1)}to{transform:translate(-28px,24px) scale(1.12)}}
+@keyframes ring{to{transform:rotate(360deg)}}
+@keyframes buttonGlow{0%,100%{box-shadow:0 0 0 rgba(84,215,255,0)}50%{box-shadow:0 0 28px rgba(84,215,255,.18)}}
+@keyframes kickerGlow{from{text-shadow:0 0 8px rgba(84,215,255,.55),0 0 16px rgba(84,215,255,.18)}to{text-shadow:0 0 12px rgba(84,215,255,.9),0 0 28px rgba(84,215,255,.32)}}
+@keyframes linePulse{0%,100%{opacity:.55;box-shadow:0 0 8px #62dcff}50%{opacity:1;box-shadow:0 0 20px #62dcff}}
+@media (prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="logo" href="#home">KARTIK <span>WAGH</span></a>
+  <div class="links" id="links">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
+    <a href="#projects">Projects</a><a href="#education">Education</a>
+    <a href="#location">Location</a><a href="#marksheet">Marksheet</a><a href="#contact">Contact</a>
+  </div>
+  <button class="menu" id="menu" aria-label="Open menu">☰</button>
+</nav>
+
+<main>
+<section class="hero" id="home">
+ <div class="hero-inner">
+  <div class="reveal">
+   <div class="eyebrow"><span class="dot"></span> Computer Engineering Student</div>
+   <h1>Welcome to<br><span class="gradient">My Website.</span></h1>
+   <p>I’m <strong>Kartik Wagh</strong> — a Computer Engineering student building my skills in programming, web development and creative technology.</p>
+   <div class="actions">
+    <a class="btn primary" href="#about">Explore About Me →</a>
+    <a class="btn" href="#projects">View Projects</a>
+   </div>
+  </div>
+  <div class="hero-card reveal">
+   <div class="card-content">
+    <div class="card-tag">Portfolio / 2026</div>
+    <div class="card-title">Future Software Developer</div>
+    <div class="card-small">Learning • Building • Improving</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="about" class="reveal">
+ <div class="section-head"><div class="kicker">01 — About</div><h2>About Me</h2><p class="sub">A professional introduction you can share when someone wants to know who you are and what you are working toward.</p></div>
+ <div class="grid">
+  <div class="panel"><div class="icon">👋</div><h3>Kartik Wagh</h3><p>I am a Computer Engineering student at Polytechnic Daman. I’m interested in coding, websites, creative technology and learning how modern software is built.</p></div>
+  <div class="panel"><div class="icon">🎯</div><h3>My Goal</h3><p>My goal is to keep improving my technical skills and become a professional software developer in the future.</p></div>
+  <div class="panel"><div class="icon">⚡</div><h3>My Approach</h3><p>I learn by building practical projects, experimenting with technology and turning ideas into working digital experiences.</p></div>
+ </div>
+</section>
+
+<section id="skills" class="reveal">
+ <div class="section-head"><div class="kicker">02 — Skills</div><h2>Skills & Learning</h2><p class="sub">Current interests and technologies I’m developing. Items marked “Learning” are future-focused skills.</p></div>
+ <div class="panel">
+  <div class="skills">
+   <span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span>
+   <span class="skill">C Programming</span><span class="skill learning">C++ · Learning</span>
+   <span class="skill learning">Python · Learning</span><span class="skill">Web Development</span>
+   <span class="skill">Problem Solving</span><span class="skill">Responsive Design</span>
+  </div>
+ </div>
+</section>
+
+<section id="projects" class="reveal">
+ <div class="section-head"><div class="kicker">03 — Projects</div><h2>Things I’ve Built</h2><p class="sub">A growing collection of practical and creative projects.</p></div>
+ <div class="grid">
+  <div class="panel"><div class="project-top"><span class="icon">🚗</span><span class="badge">Web</span></div><h3>Kartik Wagh Car World</h3><p>A car-focused showcase website with premium styling, vehicle sections and responsive design.</p></div>
+  <div class="panel"><div class="project-top"><span class="icon">✋</span><span class="badge">AI / Vision</span></div><h3>AI Hand Tracking</h3><p>A browser-based hand tracking experiment using the camera and interactive visual effects.</p></div>
+  <div class="panel"><div class="project-top"><span class="icon">🤖</span><span class="badge">Concept</span></div><h3>Personal AI Assistant</h3><p>A voice-assistant concept designed around natural-language commands and useful phone actions.</p></div>
+  <div class="panel"><div class="project-top"><span class="icon">🌐</span><span class="badge">Portfolio</span></div><h3>Personal Portfolio</h3><p>This website — a professional digital profile for education, skills and future career opportunities.</p></div>
+ </div>
+</section>
+
+<section id="education" class="reveal">
+ <div class="section-head"><div class="kicker">04 — Education</div><h2>Education</h2></div>
+ <div class="timeline">
+  <div class="panel"><h3>Diploma / Polytechnic</h3><p><strong>Polytechnic Daman</strong></p><p>Computer Engineering · Current program</p></div>
+  <div class="panel"><h3>School Education</h3><p>10th Science · English Medium</p></div>
+ </div>
+</section>
+
+<section id="location" class="reveal">
+ <div class="section-head"><div class="kicker">05 — Location</div><h2>Where I’m Based</h2></div>
+ <div class="location">
+  <div class="mapbox"><div><div class="map-pin">📍</div><h3>Silvassa</h3><p class="sub">Dadra and Nagar Haveli and Daman and Diu, India</p></div></div>
+  <div class="panel"><h3>Location</h3><p>Silvassa, Dadra and Nagar Haveli and Daman and Diu, India</p><br><p>This portfolio intentionally shows only city/region information for privacy. A residential room number or full home address is not displayed publicly.</p></div>
+ </div>
+</section>
+
+<section id="marksheet" class="reveal">
+ <div class="section-head"><div class="kicker">06 — Documents</div><h2>Marksheet</h2><p class="sub">Add your marksheet PDF here when you are ready.</p></div>
+ <div class="panel pdfbox">
+  <div><h3>Academic Marksheet</h3><p>Replace the placeholder file name with your PDF.</p></div>
+  <a class="btn primary" href="marksheet.pdf" target="_blank">Open Marksheet PDF ↗</a>
+ </div>
+</section>
+
+<section id="contact" class="reveal">
+ <div class="section-head"><div class="kicker">07 — Contact</div><h2>Let’s Connect</h2><p class="sub">Add your public contact and social links here when ready.</p></div>
+ <div class="contact">
+  <div class="panel"><h3>Professional Profile</h3><p>Kartik Wagh · Computer Engineering Student</p></div>
+  <div class="panel"><h3>Online Links</h3><p>Instagram · YouTube · GitHub — add your links in the HTML when ready.</p></div>
+ </div>
+</section>
+</main>
+
+<footer>© 2026 Kartik Wagh · Computer Engineering Portfolio</footer>
+
+<script>
+const menu=document.getElementById('menu'), links=document.getElementById('links');
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{
+   if(e.isIntersecting){
+     e.target.classList.add('show');
+     e.target.style.transitionDelay = (e.target.closest('section') ? '80ms' : '0ms');
+   }
+ })
+},{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
