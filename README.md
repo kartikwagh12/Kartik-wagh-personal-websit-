@@ -1,3 +1,6 @@
+<title>Kartik Wagh | Personal Website</title>
+
+<meta name="description" content="Kartik Wagh Personal Website - Computer Engineering Student">
 <!DOCTYPE html>
 <html lang="en">
 <head>
