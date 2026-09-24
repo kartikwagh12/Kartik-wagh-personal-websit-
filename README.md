@@ -3,7 +3,8 @@
 <meta name="description" content="Kartik Wagh Personal Website - Computer Engineering Student">
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="google-site-verification" content="XWfmCYiDwCE6Z7ejWPDIQttWnAXT5ZVm16tD4yG3k7U" />
+<head>
+  <meta name="google-site-verification" content="XWfmCYiDwCE6Z7ejWPDIQttWnAXT5ZVm16tD4yG3k7U" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Kartik Wagh — Computer Engineering Student, Web Developer and Creator.">
