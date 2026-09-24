@@ -3,12 +3,12 @@
 <meta name="description" content="Kartik Wagh Personal Website - Computer Engineering Student">
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="google-site-verification" content="XWfmCYiDwCE6Z7ejWPDIQttWnAXT5ZVm16tD4yG3k7U" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Kartik Wagh — Computer Engineering Student, Web Developer and Creator.">
 <meta name="theme-color" content="#07090f">
-<title>Kartik Wagh | Computer Engineering Portfolio</title>
+<title>Kartik Wagh | Computer Engineering </title>
 <style>
 :root{
   --bg:#07090f; --bg2:#0b0f18; --card:rgba(255,255,255,.055);
