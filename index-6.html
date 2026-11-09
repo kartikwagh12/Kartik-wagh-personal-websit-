@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kartik Wagh — Computer Science and Engineering student, aspiring software developer and creator.">
+<meta name="theme-color" content="#030407">
+<title>Kartik Wagh | Software Developer</title>
+<style>
+:root{--bg:#030407;--panel:#090e19;--text:#f5f7ff;--muted:#9299ad;--blue:#7187ff;--purple:#a56bff;--cyan:#7adfff;--line:rgba(151,166,220,.15)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.site-shell{width:min(1180px,91%);margin:auto}
+header{position:fixed;top:18px;left:0;width:100%;z-index:30;pointer-events:none}
+.navbar{height:58px;max-width:1110px;margin:auto;padding:0 19px;display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(139,153,207,.13);border-radius:15px;background:rgba(7,9,16,.72);backdrop-filter:blur(18px);pointer-events:auto;box-shadow:0 12px 45px rgba(0,0,0,.25)}
+.brand{display:flex;align-items:center;gap:9px;font-size:.88rem;font-weight:800;letter-spacing:.2px;white-space:nowrap}
+.brand-mark{height:27px;width:27px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(140deg,#667dff,#a56bff);font-size:.72rem;color:white;box-shadow:0 0 18px #6b70ff55}
+.brand small{display:block;color:#77839e;font-size:.57rem;font-weight:500;letter-spacing:1.2px;margin-top:-3px}
+.nav-links{display:flex;gap:23px;align-items:center;color:#a5abc0;font-size:.72rem}
+.nav-links a{transition:.2s}.nav-links a:hover{color:#fff;text-shadow:0 0 15px #8b8fff}
+.nav-contact{font-size:.7rem;padding:8px 13px;border:1px solid rgba(153,164,225,.22);border-radius:9px;background:rgba(255,255,255,.035)}
+.menu{display:none;background:none;color:white;border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+.hero{min-height:760px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;position:relative;padding-top:100px;isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;z-index:-3;background:radial-gradient(ellipse at 53% 48%,rgba(70,67,180,.10),transparent 32%),radial-gradient(ellipse at 95% 15%,rgba(43,76,173,.09),transparent 25%)}
+.hero-copy{position:relative;z-index:3;padding:65px 0 50px;max-width:570px}
+.status{display:inline-flex;align-items:center;gap:8px;padding:5px 11px;border:1px solid rgba(112,220,183,.19);border-radius:30px;background:rgba(45,128,102,.09);color:#a6e8ce;font-size:.65rem;margin-bottom:24px}
+.status i{height:6px;width:6px;border-radius:50%;background:#62e6ad;box-shadow:0 0 10px #62e6ad}
+h1{font-size:clamp(2.6rem,5.1vw,4.65rem);line-height:1.07;letter-spacing:-2.8px;font-weight:780;margin-bottom:12px}
+.name-gradient{background:linear-gradient(100deg,#f5f6ff 8%,#a9b4ff 48%,#bd8bff 90%);background-clip:text;-webkit-background-clip:text;color:transparent}
+.role{font-size:clamp(1.65rem,3.1vw,2.65rem);font-weight:750;letter-spacing:-1.3px;line-height:1.18;color:#f1f2fa;margin-bottom:23px}
+.role span{background:linear-gradient(100deg,#9cafff,#c18aff);background-clip:text;-webkit-background-clip:text;color:transparent}
+.intro{color:#a1a7b8;max-width:480px;font-size:.91rem;line-height:1.85;border-left:2px solid #7886ff;padding-left:15px;margin-bottom:27px}
+.actions{display:flex;gap:11px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;border-radius:9px;font-size:.72rem;font-weight:750;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 28px #667bff35}
+.btn-primary{background:linear-gradient(105deg,#f5f6ff,#dce2ff);color:#101321}
+.btn-secondary{border:1px solid rgba(154,166,220,.24);background:rgba(255,255,255,.035);color:#e8ebfa}
+.socials{display:flex;gap:10px;margin-top:22px}
+.socials a{height:29px;width:29px;display:grid;place-items:center;border:1px solid rgba(148,162,214,.18);border-radius:9px;color:#9ba5c2;font-size:.7rem;transition:.2s}
+.socials a:hover{color:#fff;border-color:#8c8eff;box-shadow:0 0 15px #737eff44}
+.visual{position:absolute;z-index:1;left:38%;top:19%;width:39%;height:66%;pointer-events:none;opacity:.96}
+#energy{width:100%;height:100%;display:block;filter:drop-shadow(0 0 18px rgba(99,91,255,.22))}
+.code-card{position:relative;z-index:4;justify-self:end;width:min(310px,100%);margin:35px 15px 0 0;padding:15px 16px 18px;border:1px solid rgba(130,151,224,.19);border-radius:13px;background:linear-gradient(145deg,rgba(11,17,31,.92),rgba(5,9,17,.9));box-shadow:0 20px 70px rgba(0,0,0,.55),0 0 38px rgba(83,94,210,.10);backdrop-filter:blur(14px)}
+.code-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:13px;border-bottom:1px solid rgba(145,159,212,.12);margin-bottom:14px;color:#7e8aa7;font-size:.59rem}
+.window-dots{display:flex;gap:5px}.window-dots i{width:6px;height:6px;border-radius:50%;background:#5e6c91}.window-dots i:first-child{background:#b778a9}.window-dots i:nth-child(2){background:#8b83d9}.window-dots i:nth-child(3){background:#63b8b2}
+.code{font: .65rem/1.9 ui-monospace,SFMono-Regular,Consolas,monospace;color:#a8b3ca;white-space:pre-wrap}
+.pink{color:#d99be9}.green{color:#78d8b1}.blue{color:#91b7ff}.yellow{color:#e5cf91}.dim{color:#66738f}
+.section{padding:90px 0;position:relative}
+.section-label{font-size:.66rem;letter-spacing:2px;text-transform:uppercase;color:#9a9fff;font-weight:800}
+.section-title{font-size:clamp(1.8rem,3.4vw,2.6rem);letter-spacing:-1.3px;margin:8px 0 10px}
+.section-desc{color:var(--muted);font-size:.9rem;max-width:650px}
+.section-head{margin-bottom:32px}
+.about-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.panel{border:1px solid var(--line);border-radius:15px;padding:24px;background:linear-gradient(145deg,rgba(12,18,32,.88),rgba(7,11,20,.9));box-shadow:0 18px 55px rgba(0,0,0,.18)}
+.panel p{color:#a1a9bc;font-size:.88rem;line-height:1.85}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fact{padding:14px;border:1px solid rgba(140,155,215,.13);border-radius:11px;background:rgba(255,255,255,.025)}
+.fact small{display:block;color:#77839c;font-size:.65rem;margin-bottom:4px}.fact strong{font-size:.78rem;color:#e6eaff}
+.skills{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.skill{border:1px solid var(--line);border-radius:13px;background:linear-gradient(145deg,#0d1424,#080d18);padding:18px 10px;text-align:center;transition:.22s}
+.skill:hover,.project:hover{transform:translateY(-5px);border-color:rgba(137,137,255,.48);box-shadow:0 12px 35px #5559ba20}
+.skill b{display:block;font-size:1.15rem;color:#a9adff;margin-bottom:6px}.skill span{font-size:.75rem;color:#c7cce0}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.project{padding:21px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,#0d1424,#080d18);transition:.22s;min-height:220px;display:flex;flex-direction:column}
+.project-icon{height:38px;width:38px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(140deg,#333d87,#49326d);color:#e1ddff;margin-bottom:16px}
+.project h3{font-size:1rem;margin-bottom:8px}.project p{font-size:.8rem;color:#9da6bb;line-height:1.7;flex:1}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:15px}.tag{font-size:.63rem;color:#b6baff;padding:4px 8px;border:1px solid rgba(139,143,255,.17);border-radius:30px;background:#7777ff0d}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.contact-item{display:flex;gap:12px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:11px;margin-top:10px;background:#ffffff04}
+.contact-icon{height:36px;width:36px;border-radius:10px;display:grid;place-items:center;background:#7777ff18;color:#b4b7ff}
+.contact-item small{display:block;color:#7e89a3;font-size:.65rem}.contact-item strong{font-size:.78rem;overflow-wrap:anywhere}
+footer{border-top:1px solid rgba(140,155,215,.12);padding:23px 0;text-align:center;color:#6f7890;font-size:.72rem}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:850px){.hero{min-height:720px;grid-template-columns:1fr 280px}.hero-copy{max-width:480px}.visual{left:27%;width:46%;opacity:.7}.code-card{width:260px;margin-right:0}.nav-links{gap:13px}.skills{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:650px){
+ header{top:9px}.navbar{height:53px;padding:0 12px}.menu{display:block}.nav-links{display:none;position:absolute;top:60px;left:4.5%;right:4.5%;padding:16px;background:rgba(8,12,22,.97);border:1px solid var(--line);border-radius:12px;flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:9px 5px}.nav-contact{display:none}
+ .hero{display:flex;flex-direction:column;align-items:stretch;justify-content:center;min-height:850px;padding-top:115px;padding-bottom:60px;gap:26px}.hero-copy{padding:15px 0 0;max-width:100%}h1{font-size:clamp(2.55rem,11vw,3.5rem);letter-spacing:-1.9px}.role{font-size:1.8rem}.intro{font-size:.85rem}
+ .visual{left:17%;top:26%;width:74%;height:40%;opacity:.64}.code-card{align-self:flex-end;width:min(300px,88%);margin:0 0 0 auto}
+ .section{padding:67px 0}.about-layout,.contact-layout{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><nav class="navbar site-shell">
+<a class="brand" href="#home"><span class="brand-mark">KW</span><span>Kartik Wagh<small>DEVELOPER PORTFOLIO</small></span></a>
+<div class="nav-links" id="navLinks"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+<a class="nav-contact" href="mailto:kartikwagh4112@gmail.com">Let's Connect ↗</a>
+<button class="menu" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+</nav></header>
+
+<main>
+<section class="hero site-shell" id="home">
+<canvas id="energy" class="visual" aria-hidden="true"></canvas>
+<div class="hero-copy reveal">
+<div class="status"><i></i> Available for learning & collaborations</div>
+<h1>Hi, I'm <span class="name-gradient">Kartik Wagh</span></h1>
+<div class="role">Computer Science<br><span>& Engineering Student</span></div>
+<p class="intro">Building creative web experiences and exploring software development, programming, and technology — one project at a time.</p>
+<div class="actions"><a class="btn btn-primary" href="#contact">Let's Connect <span>↗</span></a><a class="btn btn-secondary" href="#projects">View Projects <span>⌄</span></a></div>
+<div class="socials"><a href="mailto:kartikwagh4112@gmail.com" aria-label="Email">✉</a><a href="#projects" aria-label="Projects">⌘</a><a href="#about" aria-label="About">◎</a></div>
+</div>
+<aside class="code-card reveal" aria-label="Code sample">
+<div class="code-top"><span>kartik.profile.js</span><span class="window-dots"><i></i><i></i><i></i></span></div>
+<div class="code"><span class="pink">const</span> <span class="blue">developer</span> = {
+  name: <span class="green">"Kartik Wagh"</span>,
+  field: <span class="green">"Computer Engineering"</span>,
+  skills: [
+    <span class="green">"HTML"</span>,
+    <span class="green">"CSS"</span>,
+    <span class="green">"JavaScript"</span>,
+    <span class="green">"C++"</span>,
+    <span class="green">"Python"</span>
+  ],
+  mindset: <span class="green">"Always learning"</span>,
+  focus: <span class="green">"Build & create"</span>
+};
+
+<span class="pink">function</span> <span class="yellow">nextStep</span>() {
+  <span class="pink">return</span> <span class="green">"Keep building."</span>;
+}<span class="dim"> ▌</span></div>
+</aside>
+</section>
+
+<section class="section site-shell" id="about">
+<div class="section-head reveal"><div class="section-label">01 / About</div><h2 class="section-title">Curiosity into creation.</h2><p class="section-desc">A student, a builder, and an enthusiastic learner exploring the world of technology.</p></div>
+<div class="about-layout"><div class="panel reveal"><p>I'm Kartik Wagh, a Computer Science & Engineering student at Government Polytechnic. I enjoy learning web development and programming by building practical projects. I'm interested in creating useful digital experiences, experimenting with interactive technology, and continuously improving my skills.</p></div>
+<div class="facts reveal"><div class="fact"><small>Education</small><strong>Government Polytechnic</strong></div><div class="fact"><small>Branch</small><strong>Computer Science & Engineering</strong></div><div class="fact"><small>Admission batch</small><strong>2026–27</strong></div><div class="fact"><small>Location</small><strong>Silvassa region, India</strong></div></div></div>
+</section>
+
+<section class="section site-shell" id="skills">
+<div class="section-head reveal"><div class="section-label">02 / Toolkit</div><h2 class="section-title">Technologies I'm learning.</h2><p class="section-desc">My growing toolkit for creating, experimenting, and solving problems.</p></div>
+<div class="skills"><div class="skill reveal"><b>5</b><span>HTML</span></div><div class="skill reveal"><b>✳</b><span>CSS</span></div><div class="skill reveal"><b>JS</b><span>JavaScript</span></div><div class="skill reveal"><b>C++</b><span>C++</span></div><div class="skill reveal"><b>Py</b><span>Python</span></div></div>
+</section>
+
+<section class="section site-shell" id="projects">
+<div class="section-head reveal"><div class="section-label">03 / Selected work</div><h2 class="section-title">Things I'm building.</h2><p class="section-desc">A selection of projects and concepts from my learning journey. Live demo links can be added as each project is published.</p></div>
+<div class="projects">
+<article class="project reveal"><div class="project-icon">◈</div><h3>Car World</h3><p>A car-focused website concept showcasing automotive brands and vehicle information through a clean browsing experience.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div></article>
+<article class="project reveal"><div class="project-icon">⌁</div><h3>Hand Tracking Lab</h3><p>An interactive experiment exploring hand gestures and computer vision for controlling digital experiences.</p><div class="tags"><span class="tag">JavaScript</span><span class="tag">MediaPipe</span><span class="tag">Three.js</span></div></article>
+<article class="project reveal"><div class="project-icon">✧</div><h3>Business Website</h3><p>A responsive website concept for a small business, focused on presenting services clearly and making enquiries simple.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive</span></div></article>
+</div>
+</section>
+
+<section class="section site-shell" id="contact">
+<div class="section-head reveal"><div class="section-label">04 / Contact</div><h2 class="section-title">Have something in mind?</h2><p class="section-desc">I'd be glad to hear about project ideas, learning opportunities, or feedback.</p></div>
+<div class="contact-layout"><div class="panel reveal"><h3>Get in touch</h3><a class="contact-item" href="mailto:kartikwagh4112@gmail.com"><span class="contact-icon">✉</span><span><small>Email</small><strong>kartikwagh4112@gmail.com</strong></span></a><div class="contact-item"><span class="contact-icon">☏</span><span><small>WhatsApp</small><strong>Number to be added</strong></span></div></div><div class="panel reveal"><h3>Let's build something useful.</h3><p style="margin-top:12px">Interested in web development, creative technology, and practical projects. Reach out by email to start a conversation.</p><a class="btn btn-primary" style="margin-top:20px" href="mailto:kartikwagh4112@gmail.com?subject=Portfolio%20Enquiry">Send an Email ↗</a></div></div>
+</section>
+</main>
+<footer>© <span id="year"></span> Kartik Wagh · Designed with curiosity and code.</footer>
+
+<script>
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{const opened=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(opened));menuBtn.textContent=opened?'×':'☰';});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+/* A concentrated, flowing particle-energy plume — not a dotted page background. */
+(()=>{
+ const canvas=document.getElementById('energy'),ctx=canvas.getContext('2d');
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let w=0,h=0,particles=[],raf=0;
+ function resize(){
+   const r=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,1.5);
+   w=r.width;h=r.height;canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+   const count=Math.min(620,Math.max(260,Math.floor(w*h/95)));particles=[];
+   for(let i=0;i<count;i++){
+     const t=Math.random()*Math.PI*2,rad=Math.sqrt(Math.random());
+     const x=.53+Math.cos(t)*rad*.31, y=.53+Math.sin(t)*rad*.43;
+     const taper=Math.pow(Math.random(),.7);
+     particles.push({x:x,y:y,ox:x,oy:y,size:.35+Math.random()*1.45,phase:Math.random()*6.28,speed:.15+Math.random()*.65,alpha:.18+Math.random()*.75,bright:Math.random()});
+   }
+ }
+ function draw(ms){
+   ctx.clearRect(0,0,w,h);
+   const time=reduce?0:ms*.00022;
+   // Soft, irregular luminous core behind the particle plume.
+   const glow=ctx.createRadialGradient(w*.51,h*.54,2,w*.51,h*.54,Math.min(w,h)*.48);
+   glow.addColorStop(0,'rgba(109,105,255,.20)');glow.addColorStop(.36,'rgba(73,73,202,.10)');glow.addColorStop(1,'rgba(0,0,0,0)');
+   ctx.fillStyle=glow;ctx.fillRect(0,0,w,h);
+   for(const p of particles){
+     const drift=reduce?0:Math.sin(time*p.speed+p.phase)*.018;
+     const x=(p.ox+drift)*w + (reduce?0:Math.sin(time*1.8+p.phase)*2.2);
+     const y=(p.oy+drift*.55)*h + (reduce?0:Math.cos(time*1.4+p.phase)*2.8);
+     const color=p.bright>.78?'190,173,255':p.bright>.42?'119,128,255':'79,103,226';
+     const a=p.alpha*(.72+.28*Math.sin(time*2+p.phase));
+     ctx.beginPath();ctx.fillStyle=`rgba(${color},${a})`;ctx.shadowBlur=p.bright>.7?9:3;ctx.shadowColor=`rgba(117,111,255,${a})`;
+     ctx.arc(x,y,p.size*(p.bright>.88?1.5:1),0,Math.PI*2);ctx.fill();
+   }
+   ctx.shadowBlur=0;
+   // A few luminous wisps give the cloud a flowing, flame-like silhouette.
+   for(let k=0;k<4;k++){
+     ctx.beginPath();ctx.moveTo(w*(.28+k*.055),h*(.76-k*.04));
+     ctx.bezierCurveTo(w*(.38+k*.025),h*(.55-k*.05),w*(.52+k*.015),h*(.47-k*.08),w*(.72-k*.04),h*(.16+k*.05));
+     ctx.strokeStyle=`rgba(${k%2?'126,119,255':'91,139,255'},${.045+k*.012})`;ctx.lineWidth=7-k;ctx.shadowBlur=20;ctx.shadowColor='#7777ff';ctx.stroke();
+   }
+   ctx.shadowBlur=0;
+   if(!reduce)raf=requestAnimationFrame(draw);
+ }
+ resize();draw(0);
+ window.addEventListener('resize',()=>{cancelAnimationFrame(raf);resize();if(!reduce)raf=requestAnimationFrame(draw);});
+ if(!reduce)raf=requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
